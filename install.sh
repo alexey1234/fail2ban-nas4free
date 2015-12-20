@@ -128,17 +128,17 @@ mkdir -p /var/lib/fail2ban
 #######  There is place for replace system files. If you not use its, please comment this section
 #
 #SSH protect
-rm /etc/ec.d/syslogd
-cp  \${EXTENSIONPATH}/syslogd /etc/ec.d/syslogd
+rm /etc/rc.d/syslogd
+cp  \${EXTENSIONPATH}/syslogd /etc/rc.d/syslogd
 rm /var/log/sshd.log
 touch /var/log/sshd.log
-/etc/ec.d/syslogd restart
+/etc/rc.d/syslogd restart
 rm /usr/local/www/diag_log.inc
 cp  \${EXTENSIONPATH}/diag_log.inc /usr/local/www/diag_log.inc
 #Webserver protect
-rm /etc/ec.d/websrv
-cp \${EXTENSIONPATH}/websrv /etc/ec.d/websrv
-/etc/ec.d/websrv restart
+rm /etc/rc.d/websrv
+cp \${EXTENSIONPATH}/websrv /etc/rc.d/websrv
+/etc/rc.d/websrv restart
 #
 service fail2ban start
 
