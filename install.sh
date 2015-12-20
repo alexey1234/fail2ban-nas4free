@@ -139,7 +139,7 @@ cp  \${EXTENSIONPATH}/diag_log.inc /usr/local/www/diag_log.inc
 rm /etc/rc.d/websrv
 cp \${EXTENSIONPATH}/websrv /etc/rc.d/websrv
 /etc/rc.d/websrv restart
-#
+####  END of replace sysyem files
 service fail2ban start
 
 EOF
