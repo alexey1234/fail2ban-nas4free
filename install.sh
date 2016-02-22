@@ -27,7 +27,9 @@ echo $START_FOLDER > /tmp/fail2baninstaller
 if [ ! -z $1 ]; then
     # The first argument will be the path that the user wants to be the root folder.
     # If this directory does not exist, it is created
-    FAIL2BAN_ROOT=$1/fail2ban    
+    # Sanitize input
+    pathtoext=$1 | sed 's/[ \t/]*$//'
+    FAIL2BAN_ROOT=${pathtoext}/fail2ban    
     
     # This checks if the supplied argument is a directory. If it is not
     # then we will try to create it
