@@ -28,7 +28,7 @@ if [ ! -z $1 ]; then
     # The first argument will be the path that the user wants to be the root folder.
     # If this directory does not exist, it is created
     # Sanitize input
-    pathtoext=$1 | sed 's/[ \t/]*$//'
+    pathtoext=${1%/}
     FAIL2BAN_ROOT=${pathtoext}/fail2ban    
     
     # This checks if the supplied argument is a directory. If it is not
